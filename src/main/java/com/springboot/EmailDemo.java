@@ -16,6 +16,7 @@ import java.util.Properties;
  */
 public class EmailDemo {
 	public static void main(String[] args) {
+		System.out.println("https://blog.csdn.net/qq_37745470/article/details/89094227");
 		JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
 
 		javaMailSender.setHost("smtp.qq.com");
@@ -30,8 +31,6 @@ public class EmailDemo {
 		properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		javaMailSender.setJavaMailProperties(properties);
 
-
-
 		try {
 
 			//
@@ -39,7 +38,10 @@ public class EmailDemo {
 			cfg.setClassLoaderForTemplateLoading(ClassLoader.getSystemClassLoader(),"ftl");
 			Template emailTemplate = cfg.getTemplate("ce.ftl");
 			StringWriter out = new StringWriter();
-//			emailTemplate.process(employee,out);
+			Object data = new Object();
+
+			emailTemplate.process(data,out);
+
 
 			MimeMessage message = javaMailSender.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(message,true);
