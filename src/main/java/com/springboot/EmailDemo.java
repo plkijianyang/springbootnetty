@@ -17,6 +17,7 @@ import java.util.Properties;
 public class EmailDemo {
 	public static void main(String[] args) {
 		System.out.println("https://blog.csdn.net/qq_37745470/article/details/89094227");
+		System.out.println("https://blog.csdn.net/ll837448792/article/details/93620939");
 		JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
 
 		javaMailSender.setHost("smtp.qq.com");
